@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Meu Treino</title>
+  </head>
+  <body>
+    <header>
+      <h1>Meu Treino</h1>
+    </header>
+
+    <h3>Adicione sua meta de treinos</h3>
+    <section>
+      <input type="text" id="trainingName" placeholder="Nome do exercício" />
+      <input type="text" id="trainingQuantity" placeholder="Quantidade" />
+      <span onclick="newTraining()" class="addBtn">Adicionar</span>
+      <button id="open-question-modal">?</button>
+      <div id="hide" class="hide"></div>
+      <div id="question" class="hide">
+        <div class="modal-header">
+          <h3>Instrução do Sistema Meu Treino</h3>
+          <button id="close-question-modal">Fechar</button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Que tal colocar o nome do exercício e a quantidade de repetições que deseja realizar pelo período escolhido? Por exemplo, na próxima semana você pode se desafiar a fazer 100 agachamentos e 100 flexões. Depois, é só usar o botão
+            "Realizado" para acompanhar seu progresso diário. Ao final do período, a tabela deve estar zerada ou negativa - nesse caso, que tal aumentar sua meta para a próxima vez?
+            <span class="obs">Ah, e não se esqueça de considerar a distância percorrida(quilômetro ou metro) em exercícios como corrida, caminhada ou pedalada. </span>
+            <span class="obs"><strong>E lembre-se sempre de consultar um médico antes de iniciar qualquer atividade física.</strong></span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div>
+      <table id="myTraining">
+        <tr>
+          <th>Nome</th>
+          <th>Quantidade</th>
+        </tr>
+      </table>
+    </div>
+
+    <button id="open-modal">Realizado</button>
+    <div id="fade" class="hide"></div>
+    <div id="modal" class="hide">
+      <div class="modal-header">
+        <h3>Selecione o exercício realizado e a quantidade</h3>
+        <button id="close-modal">Fechar</button>
+      </div>
+      <div class="modal-body">
+        <select name="" id="selectTraining"></select>
+        <input type="text" id="realizedTraning" placeholder="Quantidade" />
+        <button id="confirm-btn">Confirmar</button>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
