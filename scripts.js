@@ -206,7 +206,6 @@ confirmBtn.addEventListener("click", confirmRealizedTraining);
 
 const realizedInput = document.getElementById("realizedTraning");
 const realizedQuantity = realizedInput ? Number(realizedInput.value) : 0;
-console.log(realizedQuantity);
 
 //Botão "?"
 const openQuestionButton = document.querySelector("#open-question-modal");

@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -15,6 +17,9 @@ body {
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #333;
   padding: 20px;
   width: 100%;
@@ -42,7 +47,7 @@ section span {
 }
 
 select {
-  background-color: #2E7D32;
+  background-color: #2e7d32;
   color: #fff;
   border: none;
   padding: 10px;
@@ -69,7 +74,9 @@ input[type="text"] {
   opacity: 0.8;
 }
 
-button, .addBtn, #open-modal {
+button,
+.addBtn,
+#open-modal {
   padding: 0.6rem 1.2rem;
   background-color: #888;
   color: #fff;
@@ -81,15 +88,17 @@ button, .addBtn, #open-modal {
   transition: background-color 0.3s ease;
 }
 
-.addBtn:hover, #open-modal:hover {
+.addBtn:hover,
+#open-modal:hover {
   background-color: #3e8e41;
 }
 
-#open-question-modal{
-  background-color: orange
+#open-question-modal {
+  background-color: orange;
 }
 
-.addBtn, #open-modal {
+.addBtn,
+#open-modal {
   background-color: #4caf50;
   color: #fff;
   border: none;
@@ -130,7 +139,8 @@ td {
   display: none;
 }
 
-#fade, #hide {
+#fade,
+#hide {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -140,7 +150,8 @@ td {
   z-index: 100;
 }
 
-#modal, #question {
+#modal,
+#question, #calculate {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -225,3 +236,54 @@ td {
 .close:hover {
   background-color: #d32f2f;
 }
+
+#open-calculate-modal {
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+  border: 2px solid #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #7a5f9b;
+}
+
+#tables-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.myTraining {
+  flex: 1;
+}
+
+
+.status-table {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 20px;
+  width: 200px;
+
+}
+
+.status-table table {
+  margin-bottom: 10px;
+  width: 110%;
+}
+
+#status-header {
+  background-color: #7a5f9b;
+  text-align: center;
+  color: white;
+  height: 100%;
+  padding: 5px;
+}
+
+#imc-range-info {
+  text-align: center;
+  margin: 10px 0;
+}
+
+

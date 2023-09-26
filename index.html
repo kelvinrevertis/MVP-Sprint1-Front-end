@@ -10,6 +10,26 @@
   <body>
     <header>
       <h1>Meu Treino</h1>
+      <button id="open-calculate-modal">Calculadora!</button>
+
+      <div id="hide" class="hide"></div>
+      <div id="calculate" class="hide">
+        <div class="modal-header">
+          <h3>Calculadora de Índice de Massa Corporal</h3>
+          <button id="close-calculate-modal">Fechar</button>
+        </div>
+        <div class="modal-body">
+          <p>
+            <p><input type="text" id="bodyAge" placeholder="Idade" /></p>
+            <p><input type="text" id="bodyWeight" placeholder="Peso" /></p>
+            <p><input type="text" id="bodyHeight" placeholder="Altura" /></p>
+            <span onclick="calculateBMI()" class="addBtn">Calcular</span>
+            <p>O Valor do seu IMC será exibido na tela inicial</p>
+            <p></p>
+            <span class="obs"><strong>Lembre-se: sempre de consultar um médico antes de iniciar qualquer atividade física.</strong></span>
+          </p>
+        </div>
+      </div>
     </header>
 
     <h3>Adicione sua meta de treinos</h3>
@@ -35,13 +55,30 @@
       </div>
     </section>
 
-    <div>
+    <div id="tables-container">
+
       <table id="myTraining">
         <tr>
           <th>Nome</th>
           <th>Quantidade</th>
         </tr>
       </table>
+
+    <div class="status-table">
+      <table>
+        <tr>
+          <th id="status-header">Status</th>
+          <th id="status-header">valor atual</th>
+        </tr>
+        <tr>
+          <td>IMC</td>
+          <td id="bmiValue">0.00</td>
+          <td></td>
+        </tr>
+      </table>
+      <p id="imc-range-info">Valor de IMC <strong>recomendado</strong> para a seu tipo físico é entre: <strong id="imc-range">pendente</strong> </p>
+    </div>
+
     </div>
 
     <button id="open-modal">Realizado</button>
@@ -58,6 +95,8 @@
       </div>
     </div>
 
+
     <script src="scripts.js"></script>
+    <script src="scriptsApi.js"></script>
   </body>
 </html>
