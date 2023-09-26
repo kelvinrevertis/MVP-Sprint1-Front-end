@@ -12,17 +12,22 @@
       <h1>Meu Treino</h1>
       <button id="open-calculate-modal">Calculadora!</button>
 
-      <div id="hide" class="hide"></div>
       <div id="calculate" class="hide">
         <div class="modal-header">
           <h3>Calculadora de Índice de Massa Corporal</h3>
           <button id="close-calculate-modal">Fechar</button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body-calculate">
           <p>
-            <p><input type="text" id="bodyAge" placeholder="Idade" /></p>
-            <p><input type="text" id="bodyWeight" placeholder="Peso" /></p>
-            <p><input type="text" id="bodyHeight" placeholder="Altura" /></p>
+
+            <p> <label for="bodyAge">Idade:</label> <input type="number" id="bodyAge" placeholder="Idade" /></p>
+
+
+            <p><label for="bodyWeight">Peso:</label> <input type="number" id="bodyWeight" placeholder="Peso" /></p>
+
+
+            <p><label for="bodyHeight">Altura:</label><input type="number" id="bodyHeight" placeholder="Altura" /></p>
+
             <span onclick="calculateBMI()" class="addBtn">Calcular</span>
             <p>O Valor do seu IMC será exibido na tela inicial</p>
             <p></p>
@@ -35,7 +40,7 @@
     <h3>Adicione sua meta de treinos</h3>
     <section>
       <input type="text" id="trainingName" placeholder="Nome do exercício" />
-      <input type="text" id="trainingQuantity" placeholder="Quantidade" />
+      <input type="number" id="trainingQuantity" placeholder="Quantidade" />
       <span onclick="newTraining()" class="addBtn">Adicionar</span>
       <button id="open-question-modal">?</button>
       <div id="hide" class="hide"></div>

@@ -9,7 +9,7 @@ const getBMI = async () => {
       rangeValueElement.textContent = data.healthy_bmi_range;
     }
   } catch (error) {
-    console.error("Error:", error);
+    alert("Error:", error);
   }
 };
 
@@ -21,10 +21,9 @@ const calculate = document.querySelector("#calculate");
 
 const toggleCalculator = () => {
   calculate.classList.toggle("hide");
-  hide.classList.toggle("hide");
 };
 
-[openCalculateButton, closeCalculateButton, hide].forEach((el) => {
+[openCalculateButton, closeCalculateButton].forEach((el) => {
   el.addEventListener("click", () => toggleCalculator());
 });
 
@@ -81,7 +80,7 @@ const calculateBMI  = async () => {
 };
 
 const sendBMItoAPI = async (bmi, health, healthyBmiRange) => {
-  const url = "http://127.0.0.1:5000/bmi"; // Substitua pela URL da sua API
+  const url = "http://127.0.0.1:5000/bmi";
   const data = {
     bmi,
     health,
@@ -89,7 +88,7 @@ const sendBMItoAPI = async (bmi, health, healthyBmiRange) => {
   };
 
   const options = {
-    method: "PUT", // Use o método PUT para atualizar os valores existentes
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
