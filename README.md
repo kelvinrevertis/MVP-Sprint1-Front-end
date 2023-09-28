@@ -3,7 +3,7 @@
 Com o servidor rodando execute o arquivo index.html com o seu browser.
 
 
-## Docker
+## Executando com Docker
 
 Com o serviço docker executando use os seguintes comandos em seu terminal:
 
