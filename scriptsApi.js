@@ -1,10 +1,3 @@
-const protocol = window.location.protocol;
-const host = window.location.host;
-const prefix = protocol + "//" + host.split(":")[0];
-const baseUrl = `${prefix}:5000`;
-
-console.log(baseUrl);
-
 const getBMI = async () => {
   try {
     const response = await fetch(`${baseUrl}/bmi`);
