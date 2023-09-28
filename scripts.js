@@ -1,6 +1,11 @@
+const protocol = window.location.protocol;
+const host = window.location.host;
+const prefix = protocol + "//" + host.split(":")[0];
+const baseUrl = `${prefix}:5000`;
+
 const getList = async () => {
   try {
-    const response = await fetch("http://127.0.0.1:5000/treinos");
+    const response = await fetch(`${baseUrl}/treinos`);
     const data = await response.json();
     const options = data.map((item) => ({
       value: item.id,
@@ -17,7 +22,7 @@ getList();
 const postTraining = async (inputTraining, inputQuantity) => {
   const data = { nome: inputTraining, quantidade: inputQuantity };
   console.log(inputTraining);
-  let url = "http://127.0.0.1:5000/treinos";
+  let url = `${baseUrl}/treinos`;
 
   try {
     const response = await fetch(url);
@@ -87,7 +92,7 @@ const removeElement = () => {
 };
 
 const deleteItem = (id) => {
-  let url = `http://127.0.0.1:5000/treinos/${id}`;
+  let url = `${baseUrl}/treinos/${id}`;
   fetch(url, {
     method: "delete",
   })
@@ -153,7 +158,7 @@ const insertSelect = (trainings) => {
   });
 };
 
-fetch("http://127.0.0.1:5000/treinos")
+fetch(`${baseUrl}/treinos`)
   .then((response) => response.json())
   .then((data) => {
     insertSelect(data);
@@ -164,14 +169,14 @@ fetch("http://127.0.0.1:5000/treinos")
     const selectedId = select.options[select.selectedIndex].value;
     const realized = Number(document.getElementById("realizedTraning").value);
 
-    let url = `http://127.0.0.1:5000/treinos`;
+    let url = `${baseUrl}/treinos`;
 
     try {
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error("Erro ao recuperar o treino");
       }
-      url = `http://127.0.0.1:5000/treino/${selectedId}`;
+      url = `${baseUrl}/treino/${selectedId}`;
 
       const treinos = await response.json();
       const treino = treinos.find((t) => t.id == selectedId);

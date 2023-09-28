@@ -1,6 +1,13 @@
+const protocol = window.location.protocol;
+const host = window.location.host;
+const prefix = protocol + "//" + host.split(":")[0];
+const baseUrl = `${prefix}:5000`;
+
+console.log(baseUrl);
+
 const getBMI = async () => {
   try {
-    const response = await fetch("http://127.0.0.1:5000/bmi");
+    const response = await fetch(`${baseUrl}/bmi`);
     const data = await response.json();
     if (data && data.bmi) {
       const bmiValueElement = document.getElementById("bmiValue");
@@ -32,7 +39,7 @@ const updateBMI = (bmi) => {
   bodyBMIInput.value = bmi.toFixed(2);
 };
 
-const calculateBMI  = async () => {
+const calculateBMI = async () => {
   const inputAge = parseFloat(document.getElementById("bodyAge").value);
   const inputWeight = parseFloat(document.getElementById("bodyWeight").value);
   const inputHeight = parseFloat(document.getElementById("bodyHeight").value);
@@ -80,7 +87,7 @@ const calculateBMI  = async () => {
 };
 
 const sendBMItoAPI = async (bmi, health, healthyBmiRange) => {
-  const url = "http://127.0.0.1:5000/bmi";
+  const url = `${baseUrl}/bmi`;
   const data = {
     bmi,
     health,
@@ -102,5 +109,3 @@ const sendBMItoAPI = async (bmi, health, healthyBmiRange) => {
     console.error("Erro ao atualizar resultado na API:", error);
   }
 };
-
-
